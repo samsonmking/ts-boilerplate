@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "dist/src/index.js",
+            "runtimeExecutable": null,
+            "outputCapture": "std",
+            "sourceMaps": true,
+            "preLaunchTask": "build",
+            "outFiles": ["${workspaceFolder}/dist/src/**/*.js"],
+            "env": {
+                "NODE_OPTIONS": "--unhandled-rejections=strict --enable-source-maps"
+            }
+        },
+        {
+            "name": "Run mocha subset",
+            "type": "node",
+            "request": "launch",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+            "args": ["--no-timeouts", "--grep", "${input:mochaGrep}"],
+            "runtimeExecutable": null,
+            "outputCapture": "std",
+            "sourceMaps": true,
+            "stopOnEntry": false,
+            "cwd": "${workspaceFolder}/",
+            "env": {
+                "NODE_OPTIONS": "--unhandled-rejections=strict --enable-source-maps"
+            },
+            "outFiles": ["${workspaceFolder}/dist/**/*"],
+            "preLaunchTask": "build",
+            "internalConsoleOptions": "openOnSessionStart"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "mochaGrep",
+            "description": "Regex to pass to mocha --grep",
+            "type": "promptString"
+        }
+    ]
+}

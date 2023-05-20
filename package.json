@@ -1,0 +1,29 @@
+{
+    "name": "ts-boilerplate",
+    "version": "1.0.0",
+    "description": "TypeScript, Mocha, Chai, Sinon, and VSCode Template",
+    "main": "dist/index.js",
+    "files": [
+        "dist",
+        "license"
+    ],
+    "scripts": {
+        "clean": "tsc --build --clean --pretty",
+        "build": "tsc --build --pretty",
+        "start": "node dist/src/index.js",
+        "test": "mocha"
+    },
+    "author": "samsonmking",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/chai": "^4.3.5",
+        "@types/chai-as-promised": "^7.1.5",
+        "@types/mocha": "^10.0.1",
+        "@types/node": "^18.16.0",
+        "chai": "^4.3.7",
+        "chai-as-promised": "^7.1.1",
+        "mocha": "^10.2.0",
+        "prettier": "^2.8.8",
+        "typescript": "^5.0.4"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "enable-source-maps": true,
+    "full-trace": true,
+    "check-leaks": true,
+    "recursive": "true",
+    "spec": ["dist/test/**/*.spec.js"]
+}

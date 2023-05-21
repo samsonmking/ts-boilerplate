@@ -10,7 +10,9 @@
         "moduleResolution": "node",
         "sourceMap": true,
         "declaration": true,
-        "declarationMap": true
+        "declarationMap": true,
+        "rootDir": "."
     },
+    "include": ["src/**/*.ts", "test/**/*.spec.ts"],
     "exclude": ["node_modules", "dist"]
 }
